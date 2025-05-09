@@ -31,7 +31,7 @@ export function Hero() {
           Smart Mechanics Zambia
         </h1>
         <p className="text-lg text-[#E5E5E5] mt-4 max-w-xl leading-relaxed">
-          Delivering trusted mechanical & technical solutions for Zambia's industrial, agricultural, and automotive sectors since 2018.
+          Delivering trusted mechanical & technical solutions for Zambia&rsquo;s industrial, agricultural, and automotive sectors since 2018.
         </p>
         <a
           href="/contact"
