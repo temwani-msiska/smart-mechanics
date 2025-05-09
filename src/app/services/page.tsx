@@ -1,18 +1,11 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import {
-  Wrench,
-  Truck,
-  Tractor,
-  Filter,
-  Car,
-  Settings,
-} from 'lucide-react';
-import dynamic from 'next/dynamic';
-import gearAnimation from '../../animations/gear.json';
+import { motion } from "framer-motion";
+import { Wrench, Truck, Tractor, Filter, Car, Settings } from "lucide-react";
+import dynamic from "next/dynamic";
+import gearAnimation from "../../animations/gear.json";
 
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -22,39 +15,39 @@ const fadeInUp = {
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Engine Overhaul',
+      title: "Engine Overhaul",
       description:
-        'Comprehensive engine repairs, reconditioning, and diagnostics for tractors, forklifts, and vehicles.',
+        "Comprehensive engine repairs, reconditioning, and diagnostics for tractors, forklifts, and vehicles.",
       icon: Wrench,
     },
     {
-      title: 'Forklift Hire & Maintenance',
+      title: "Forklift Hire & Maintenance",
       description:
-        'Reliable forklift rental and full maintenance contracts to ensure your operations stay on track.',
+        "Reliable forklift rental and full maintenance contracts to ensure your operations stay on track.",
       icon: Truck,
     },
     {
-      title: 'Earth Moving Repairs & Parts',
+      title: "Earth Moving Repairs & Parts",
       description:
-        'Repair and supply of parts for Caterpillar, Komatsu, Hitachi and more — fast turnaround guaranteed.',
+        "Repair and supply of parts for Caterpillar, Komatsu, Hitachi and more — fast turnaround guaranteed.",
       icon: Settings,
     },
     {
-      title: 'Vehicle Parts & Filters',
+      title: "Vehicle Parts & Filters",
       description:
-        'Wide inventory of high-quality vehicle parts, filters, and industrial components for all brands.',
+        "Wide inventory of high-quality vehicle parts, filters, and industrial components for all brands.",
       icon: Filter,
     },
     {
-      title: 'Agricultural Equipment',
+      title: "Agricultural Equipment",
       description:
-        'Sales, repairs, and servicing of tractors, ploughs, planters, and irrigation tools.',
+        "Sales, repairs, and servicing of tractors, ploughs, planters, and irrigation tools.",
       icon: Tractor,
     },
     {
-      title: 'Car Hire & Logistics',
+      title: "Car Hire & Logistics",
       description:
-        'Affordable logistics solutions and car hire (1-ton van, saloon car) for your transport needs.',
+        "Affordable logistics solutions and car hire (1-ton van, saloon car) for your transport needs.",
       icon: Car,
     },
   ];
@@ -80,7 +73,8 @@ export default function ServicesPage() {
           Our Core Services
         </h1>
         <p className="text-[#D1D5DB] text-lg leading-relaxed">
-          We don’t just fix machines. We fuel industries across Zambia with precision, reliability, and speed.
+          We don’t just fix machines. We fuel industries across Zambia with
+          precision, reliability, and speed.
         </p>
       </motion.div>
 
@@ -107,7 +101,9 @@ export default function ServicesPage() {
               <Icon className="w-7 h-7" />
             </div>
             <h3 className="text-xl font-bold mb-2">{title}</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {description}
+            </p>
           </motion.div>
         ))}
       </motion.div>

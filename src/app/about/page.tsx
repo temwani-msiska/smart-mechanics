@@ -5,7 +5,9 @@ import { Briefcase, Target, ShieldCheck } from "lucide-react";
 import CountUp from "react-countup";
 import dynamic from "next/dynamic";
 import gearAnimation from "../../animations/gear.json";
+
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0 },
@@ -13,7 +15,7 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <div className="relative bg-[#F9FAFB] text-[#0E1A1F] overflow-hidden">
+    <div className="relative bg-[#0E1A1F] text-white overflow-hidden">
       {/* Floating Gear Animation */}
       <div className="absolute -top-16 -right-16 w-80 opacity-10 z-0 pointer-events-none select-none">
         <Lottie animationData={gearAnimation} loop />
@@ -31,15 +33,16 @@ export default function AboutPage() {
           <div className="inline-flex items-center justify-center bg-[#F5A623]/10 text-[#F5A623] px-5 py-2 rounded-full mb-4 text-sm font-semibold uppercase tracking-wider">
             Excellence In Motion
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#0E1A1F] mb-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-[#F5A623] mb-6">
             Who We Are
           </h1>
-          <p className="text-lg md:text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#D1D5DB] max-w-3xl mx-auto leading-relaxed">
             Since 2018, Smart Mechanics Zambia has been trusted to power
             Zambia’s vital industries — mining, agriculture, construction, and
             logistics — with innovation, speed, and people-first service.
           </p>
         </motion.section>
+
         {/* Vision, Mission, Culture */}
         <motion.section
           className="grid md:grid-cols-3 gap-10"
@@ -69,7 +72,7 @@ export default function AboutPage() {
               key={title}
               variants={fadeUp}
               whileHover={{ scale: 1.04 }}
-              className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 transition-transform duration-300 text-center"
+              className="bg-white text-[#0E1A1F] p-8 rounded-2xl shadow-xl border border-gray-200 transition-transform duration-300 text-center"
             >
               <Icon className="mx-auto h-10 w-10 text-[#F5A623] mb-4" />
               <h3 className="text-xl font-bold mb-2">{title}</h3>
@@ -77,6 +80,7 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </motion.section>
+
         {/* Values */}
         <motion.section
           initial="hidden"
@@ -84,7 +88,9 @@ export default function AboutPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-6">Core Values</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-6">
+            Core Values
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               "Customer-Centricity",
@@ -99,13 +105,14 @@ export default function AboutPage() {
               <motion.div
                 key={idx}
                 variants={fadeUp}
-                className="bg-white py-4 px-3 text-center text-sm text-[#374151] rounded-lg shadow-sm hover:shadow-md transition border border-gray-200"
+                className="bg-white text-[#374151] py-4 px-3 text-center text-sm rounded-lg shadow-sm hover:shadow-md transition border border-gray-200"
               >
                 {val}
               </motion.div>
             ))}
           </div>
         </motion.section>
+
         {/* SHEQ Section */}
         <motion.section
           initial="hidden"
@@ -114,16 +121,16 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold text-white mb-6">
             Safety, Health & Environment
           </h2>
-          <p className="text-[#4B5563] leading-relaxed">
+          <p className="text-[#D1D5DB] leading-relaxed">
             We are committed to responsible operations that prioritize health,
             safety, and the environment. Our SHEQ framework is proactive,
             data-driven, and built to protect people, communities, and planet.
           </p>
         </motion.section>
-      
+
         {/* Stats Section */}
         <motion.section
           initial="hidden"
@@ -149,6 +156,7 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </motion.section>
+
         {/* Team Section */}
         <motion.section
           initial="hidden"
@@ -156,7 +164,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.15 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-10">
+          <h2 className="text-3xl font-bold text-center text-white mb-10">
             Meet the Team
           </h2>
           <div className="grid md:grid-cols-2 gap-10">

@@ -6,8 +6,8 @@ export default function Hero() {
           Smart Mechanics Zambia
         </h1>
         <p className="text-lg md:text-xl text-darkBg mb-6">
-          Providing reliable, innovative, and cost-effective mechanical & technical solutions
-          across Zambia’s key industries since 2018.
+          Providing reliable, innovative, and cost-effective mechanical &
+          technical solutions across Zambia’s key industries since 2018.
         </p>
         <a
           href="/contact"
@@ -17,5 +17,5 @@ export default function Hero() {
         </a>
       </div>
     </section>
-  )
+  );
 }

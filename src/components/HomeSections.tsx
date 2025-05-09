@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { Wrench, Truck, Settings, ShieldCheck, Car, Cog } from "lucide-react";
 import dynamic from "next/dynamic";
-import gearAnimation from '../animations/gear.json';
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false }); 
+import gearAnimation from "../animations/gear.json";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
@@ -34,7 +34,8 @@ export function Hero() {
             Mechanical Power. Delivered.
           </h1>
           <p className="text-lg md:text-xl text-[#E5E5E5] leading-relaxed mb-8">
-            Since 2018, we’ve engineered trust across Zambia’s industrial, agricultural, and logistics sectors.
+            Since 2018, we’ve engineered trust across Zambia’s industrial,
+            agricultural, and logistics sectors.
           </p>
           <a
             href="/contact"
@@ -92,7 +93,8 @@ export function AboutPreview() {
           Built for Performance. Powered by People.
         </h2>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          From forklifts to farm tech, <strong>Smart Mechanics Zambia</strong> delivers high-impact technical solutions with speed, care, and craft.
+          From forklifts to farm tech, <strong>Smart Mechanics Zambia</strong>{" "}
+          delivers high-impact technical solutions with speed, care, and craft.
         </p>
 
         <a
