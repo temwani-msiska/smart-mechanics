@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, Target, ShieldCheck } from "lucide-react";
+import Lottie from "lottie-react";
+import gearAnimation from "../../animations/gear.json";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -10,202 +12,203 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20 space-y-28">
-      {/* Header */}
-      <motion.section
-        className="text-center"
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        transition={{ duration: 0.6 }}
-      >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-sm mb-6">
-          Who We Are
-        </h1>
-        <p className="text-gearGray text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Since 2018, Smart Mechanics Zambia has been a trusted force in
-          Zambia’s technical sector — from mining to agriculture, construction
-          to logistics. We’re built on speed, precision, and people-first
-          service.
-        </p>
-      </motion.section>
+    <div className="relative bg-[#F9FAFB] text-[#0E1A1F] overflow-hidden">
+      {/* Floating Gear Animation */}
+      <div className="absolute -top-16 -right-16 w-80 opacity-10 z-0 pointer-events-none select-none">
+        <Lottie animationData={gearAnimation} loop />
+      </div>
 
-      {/* Vision, Mission, Culture */}
-      <motion.section
-        className="grid md:grid-cols-3 gap-10 text-center"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.2 }}
-      >
-        {[
-          {
-            title: "Vision",
-            icon: Target,
-            desc: "To be a customer-focused and forward-thinking provider of goods, equipment, and services.",
-          },
-          {
-            title: "Mission",
-            icon: ShieldCheck,
-            desc: "Delivering high-quality goods and services through technical excellence, team growth, and innovation.",
-          },
-          {
-            title: "Work Culture",
-            icon: Briefcase,
-            desc: "Built on ISO standards, efficiency, teamwork, and inclusivity — we make excellence a habit.",
-          },
-        ].map(({ title, icon: Icon, desc }) => (
-          <motion.div
-            key={title}
-            variants={fadeUp}
-            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition"
-          >
-            <Icon className="mx-auto h-10 w-10 text-primary mb-4" />
-            <h3 className="text-xl font-bold text-darkBg mb-2">{title}</h3>
-            <p className="text-textGray italic">{desc}</p>
-          </motion.div>
-        ))}
-      </motion.section>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 space-y-28">
+        {/* Header */}
+        <motion.section
+          className="text-center"
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center justify-center bg-[#F5A623]/10 text-[#F5A623] px-5 py-2 rounded-full mb-4 text-sm font-semibold uppercase tracking-wider">
+            Excellence In Motion
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-[#0E1A1F] mb-6">
+            Who We Are
+          </h1>
+          <p className="text-lg md:text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed">
+            Since 2018, Smart Mechanics Zambia has been trusted to power Zambia’s vital
+            industries — mining, agriculture, construction, and logistics — with innovation,
+            speed, and people-first service.
+          </p>
+        </motion.section>
 
-      {/* Values */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-3xl font-bold text-center text-darkBg mb-6">
-          Core Values
-        </h2>
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-gearGray text-sm max-w-5xl mx-auto">
-          {[
-            "Customer-Centricity",
-            "Integrity & Trust",
-            "Innovation & Creativity",
-            "Clear Communication",
-            "Client Development",
-            "Continuous Improvement",
-            "Team Collaboration",
-            "Geographic Reach",
-          ].map((val) => (
-            <li
-              key={val}
-              className="bg-white py-4 px-2 rounded-lg shadow-sm hover:shadow-md transition border"
-            >
-              {val}
-            </li>
-          ))}
-        </ul>
-      </motion.section>
-
-      {/* SHEQ */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-3xl font-bold text-center text-darkBg mb-6">
-          Safety, Health & Environment
-        </h2>
-        <p className="text-center text-gearGray max-w-3xl mx-auto leading-relaxed">
-          Our SHEQ policies are designed to minimize risk, protect health, and
-          promote eco-friendly practices. We invest in sustainable operations
-          that prioritize community and planet.
-        </p>
-      </motion.section>
-
-      {/* Team Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-      >
-        <h2 className="text-3xl font-bold text-center text-darkBg mb-10">
-          Meet the Team
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Vision, Mission, Culture */}
+        <motion.section
+          className="grid md:grid-cols-3 gap-10"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+        >
           {[
             {
-              name: "Luke Nsakanya",
-              role: "Managing Director",
-              qualification:
-                "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
-              phone: "+260977276638",
-              email: "lukensakanya@yahoo.com",
-              image: "/team/LukeNkasanya.jpg",
+              title: "Vision",
+              icon: Target,
+              desc: "To be a customer-focused and forward-thinking provider of technical equipment and services.",
             },
             {
-              name: "Archibald Nsakanya",
-              role: "Technical Adviser",
-              qualification: "Cert. in Automotive Mechanics",
-              phone: "+260966483713",
-              image: "/team/ArchibaldNkaskanya.jpg",
+              title: "Mission",
+              icon: ShieldCheck,
+              desc: "Delivering high-quality goods and services through technical excellence, innovation, and team growth.",
             },
             {
-              name: "Steven Chibolela",
-              role: "Agriculture Engineer",
-              qualification: "Diploma in Agricultural Engineering",
-              image: "/team/StevenChibolela.jpg",
+              title: "Work Culture",
+              icon: Briefcase,
+              desc: "Rooted in ISO standards, teamwork, and continuous improvement — our culture drives impact.",
             },
-            {
-              name: "Mark Chitambala",
-              role: "Plumber",
-              qualification: "Diploma in Water Engineering",
-              phone: "+260977169934",
-              image: "/team/default.jpg",
-            },
-            {
-              name: "Clifford Sikombe",
-              role: "IT Technician",
-              qualification: "Diploma in ICT",
-              phone: "+260978765423",
-              image: "/team/default.jpg",
-            },
-          ].map((member) => (
+          ].map(({ title, icon: Icon, desc }) => (
             <motion.div
-              key={member.name}
+              key={title}
               variants={fadeUp}
-              className="flex gap-6 items-start bg-white p-6 rounded-2xl border shadow-md hover:shadow-lg transition"
+              whileHover={{ scale: 1.04 }}
+              className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 transition-transform duration-300 text-center"
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-24 h-24 object-cover rounded-full border-2 border-textGray"
-              />
-              <div>
-                <h3 className="text-lg font-bold text-primary">{member.name}</h3>
-                <p className="text-sm text-darkBg">{member.role}</p>
-                <p className="text-sm italic text-textGray mb-2">
-                  {member.qualification}
-                </p>
-                {member.phone && (
-                  <p className="text-sm text-gearGray">
-                    📞{" "}
-                    <a href={`tel:${member.phone}`} className="hover:text-primary">
-                      {member.phone}
-                    </a>
-                  </p>
-                )}
-                {member.email && (
-                  <p className="text-sm text-gearGray">
-                    ✉️{" "}
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="hover:text-primary"
-                    >
-                      {member.email}
-                    </a>
-                  </p>
-                )}
-              </div>
+              <Icon className="mx-auto h-10 w-10 text-[#F5A623] mb-4" />
+              <h3 className="text-xl font-bold mb-2">{title}</h3>
+              <p className="text-[#4B5563] italic">{desc}</p>
             </motion.div>
           ))}
-        </div>
-      </motion.section>
+        </motion.section>
+
+        {/* Values */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-6">Core Values</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              "Customer-Centricity",
+              "Integrity & Trust",
+              "Innovation & Creativity",
+              "Clear Communication",
+              "Client Development",
+              "Continuous Improvement",
+              "Team Collaboration",
+              "Geographic Reach",
+            ].map((val, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeUp}
+                className="bg-white py-4 px-3 text-center text-sm text-[#374151] rounded-lg shadow-sm hover:shadow-md transition border border-gray-200"
+              >
+                {val}
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* SHEQ Section */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <h2 className="text-3xl font-bold mb-6">Safety, Health & Environment</h2>
+          <p className="text-[#4B5563] leading-relaxed">
+            We are committed to responsible operations that prioritize health, safety,
+            and the environment. Our SHEQ framework is proactive, data-driven,
+            and built to protect people, communities, and planet.
+          </p>
+        </motion.section>
+
+        {/* Team Section */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.15 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-10">Meet the Team</h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              {
+                name: "Luke Nsakanya",
+                role: "Managing Director",
+                qualification:
+                  "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
+                phone: "+260977276638",
+                email: "lukensakanya@yahoo.com",
+                image: "/team/LukeNkasanya.jpg",
+              },
+              {
+                name: "Archibald Nsakanya",
+                role: "Technical Adviser",
+                qualification: "Cert. in Automotive Mechanics",
+                phone: "+260966483713",
+                image: "/team/ArchibaldNkaskanya.jpg",
+              },
+              {
+                name: "Steven Chibolela",
+                role: "Agriculture Engineer",
+                qualification: "Diploma in Agricultural Engineering",
+                image: "/team/StevenChibolela.jpg",
+              },
+              {
+                name: "Mark Chitambala",
+                role: "Plumber",
+                qualification: "Diploma in Water Engineering",
+                phone: "+260977169934",
+                image: "/team/default.jpg",
+              },
+              {
+                name: "Clifford Sikombe",
+                role: "IT Technician",
+                qualification: "Diploma in ICT",
+                phone: "+260978765423",
+                image: "/team/default.jpg",
+              },
+            ].map((member) => (
+              <motion.div
+                key={member.name}
+                variants={fadeUp}
+                className="flex gap-6 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-md hover:shadow-lg transition"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-24 h-24 object-cover rounded-full border-2 border-[#E5E7EB]"
+                />
+                <div>
+                  <h3 className="text-lg font-bold text-[#F5A623]">{member.name}</h3>
+                  <p className="text-sm font-medium text-[#1F2937]">{member.role}</p>
+                  <p className="text-sm italic text-[#6B7280] mb-2">
+                    {member.qualification}
+                  </p>
+                  {member.phone && (
+                    <p className="text-sm text-[#4B5563]">
+                      📞{" "}
+                      <a href={`tel:${member.phone}`} className="hover:text-[#F5A623]">
+                        {member.phone}
+                      </a>
+                    </p>
+                  )}
+                  {member.email && (
+                    <p className="text-sm text-[#4B5563]">
+                      ✉️{" "}
+                      <a href={`mailto:${member.email}`} className="hover:text-[#F5A623]">
+                        {member.email}
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </div>
     </div>
   );
 }
