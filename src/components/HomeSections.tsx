@@ -138,9 +138,7 @@ export function ContactCTA() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
-        <p className="mb-6 text-lg text-[#D1D5DB] max-w-xl mx-auto">
-          Reach out today and let’s build something powerful together.
-        </p>
+    <p className="mb-6 text-lg text-[#D1D5DB] max-w-xl mx-auto">Reach out today and let&rsquo;s build something powerful together.</p>
         <a
           href="/contact"
           className="bg-[#F5A623] text-[#0E1A1F] px-6 py-3 rounded-full font-semibold hover:brightness-110 hover:scale-105 transition"

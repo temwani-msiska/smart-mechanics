@@ -24,7 +24,7 @@ export default function ContactPage() {
       {/* Contact Info */}
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-extrabold text-[#F5A623]">Get in Touch</h1>
-        <p className="text-gray-600 text-lg">We'd love to hear from you. Reach out using the info below or send us a message.</p>
+        <p className="text-gray-600 text-lg">We&apos;d love to hear from you.Reach out using the info below or send us a message.</p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-6">
           <div className="flex items-center gap-3 text-gray-700">
             <MapPin className="text-[#F5A623]" />
