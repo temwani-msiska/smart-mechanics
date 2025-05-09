@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import {
   Wrench,
   Truck,
@@ -8,6 +9,15 @@ import {
   Car,
   Settings,
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import gearAnimation from '../../animations/gear.json';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function ServicesPage() {
   const services = [
@@ -50,22 +60,57 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-extrabold text-[#F5A623] mb-12 text-center tracking-wide">
-        Our Services
-      </h1>
-      <div className="grid md:grid-cols-3 gap-10">
-        {services.map(({ title, description, icon: Icon }) => (
-          <div
-            key={title}
-            className="bg-white border border-gray-100 shadow-sm rounded-xl p-8 hover:shadow-md transition duration-300 flex flex-col items-center text-center"
-          >
-            <Icon className="text-[#F5A623] w-12 h-12 mb-4" />
-            <h2 className="text-xl font-semibold text-[#0E1A1F] mb-2">{title}</h2>
-            <p className="text-gray-600 text-sm">{description}</p>
-          </div>
-        ))}
+    <div className="relative bg-[#0E1A1F] text-white py-28 px-6 overflow-hidden">
+      {/* Lottie Gear Animation */}
+      <div className="absolute -top-24 -right-20 w-96 opacity-10 z-0 pointer-events-none select-none">
+        <Lottie animationData={gearAnimation} loop />
       </div>
+
+      {/* Header Section */}
+      <motion.div
+        className="text-center max-w-4xl mx-auto mb-20 relative z-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="inline-block bg-[#F5A623]/10 text-[#F5A623] px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide mb-4">
+          What We Offer
+        </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-[#F5A623]">
+          Our Core Services
+        </h1>
+        <p className="text-[#D1D5DB] text-lg leading-relaxed">
+          We don’t just fix machines. We fuel industries across Zambia with precision, reliability, and speed.
+        </p>
+      </motion.div>
+
+      {/* Services Grid */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
+        }}
+      >
+        {services.map(({ title, description, icon: Icon }, idx) => (
+          <motion.div
+            key={idx}
+            variants={fadeInUp}
+            whileHover={{ scale: 1.04 }}
+            className="bg-white text-[#0E1A1F] p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 transform"
+          >
+            <div className="w-14 h-14 mx-auto mb-4 bg-[#F5A623]/20 text-[#F5A623] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <Icon className="w-7 h-7" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">{title}</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 }
