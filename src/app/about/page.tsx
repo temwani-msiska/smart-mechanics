@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Users, Target, ShieldCheck } from "lucide-react";
+import { Briefcase, Target, ShieldCheck } from "lucide-react"; // Removed 'Users'
 
 export default function AboutPage() {
   return (
