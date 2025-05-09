@@ -1,41 +1,48 @@
 "use client";
 
+import { Briefcase, Users, Target, ShieldCheck } from "lucide-react";
+
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16 space-y-12">
-      <section>
-        <h1 className="text-4xl font-bold text-red-600 mb-4">About Us</h1>
-        <p className="text-gray-700 leading-relaxed">
-          Smart Mechanics Zambia, founded in 2018, delivers reliable and
-          cost-effective mechanical and technical solutions across Zambia. We
-          serve industries including mining, construction, agriculture, and
-          manufacturing. Our team is known for quick turnarounds, customer
-          service, and sourcing high-quality parts.
+    <div className="max-w-6xl mx-auto px-6 py-20 space-y-20">
+      <section className="text-center">
+        <h1 className="text-4xl font-extrabold text-[#F5A623] mb-4 tracking-wide">
+          About Us
+        </h1>
+        <p className="text-[#4B5563] text-lg leading-relaxed max-w-3xl mx-auto">
+          Smart Mechanics Zambia, founded in 2018, delivers reliable and cost-effective mechanical and technical solutions across Zambia. We serve industries including mining, construction, agriculture, and manufacturing. Our team is known for quick turnarounds, customer service, and sourcing high-quality parts.
         </p>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Vision</h2>
-        <p className="text-gray-700 italic">
-          We support businesses and households with the tools to succeed. Our
-          goal is to be a customer-focused and forward-thinking provider of
-          goods, equipment, and services.
-        </p>
+      <section className="grid md:grid-cols-3 gap-10 text-center">
+        <div>
+          <Target className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
+          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Vision</h2>
+          <p className="text-[#6B7280] italic">
+            To be a customer-focused and forward-thinking provider of goods, equipment, and services.
+          </p>
+        </div>
+        <div>
+          <ShieldCheck className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
+          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Mission</h2>
+          <p className="text-[#4B5563] leading-relaxed">
+            Deliver high-quality goods and services while committing to technical excellence, employee development, and partnerships.
+          </p>
+        </div>
+        <div>
+          <Briefcase className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
+          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Work Culture</h2>
+          <p className="text-[#4B5563] leading-relaxed">
+            We promote innovation, inclusivity, and ISO-focused practices that eliminate inefficiencies and grow talent.
+          </p>
+        </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Mission</h2>
-        <p className="text-gray-700 leading-relaxed">
-          Our mission is to deliver high-quality goods and services and become a
-          leading supplier and contracting company. We are committed to
-          technical excellence, employee development, and partnerships that
-          yield favorable results.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Our Values</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
+        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-4 text-center">
+          Our Values
+        </h2>
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[#4B5563] text-sm list-disc list-inside max-w-4xl mx-auto">
           <li>Customer-Centricity</li>
           <li>Integrity & Trustworthiness</li>
           <li>Innovation & Creativity</li>
@@ -48,35 +55,22 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Work Culture</h2>
-        <p className="text-gray-700 leading-relaxed">
-          We foster a positive and inclusive work environment that supports
-          innovation and learning. We are ISO 9002 focused and committed to
-          eliminating non-value-adding activities while promoting employee
-          well-being and professional development.
+        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-4 text-center">
+          Safety, Health, & the Environment
+        </h2>
+        <p className="text-[#4B5563] leading-relaxed max-w-3xl mx-auto text-center">
+          We prioritize safety, health, and environmental protection through integrated policies and proactive risk management. Our operations reduce carbon footprint and emphasize sustainability.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
-          Safety, Health, & the Environment
-        </h2>
-        <p className="text-gray-700 leading-relaxed">
-          We prioritize safety, health, and environmental protection through
-          integrated policies and updated risk assessments. Our operations focus
-          on reducing carbon footprint and using environmentally responsible
-          materials.
-        </p>
-      </section>
-      <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Team</h2>
+        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-6 text-center">Our Team</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             {
               name: "Luke Nsakanya",
               role: "Managing Director",
-              qualification:
-                "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
+              qualification: "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
               phone: "+260977276638",
               email: "lukensakanya@yahoo.com",
               image: "/team/LukeNkasanya.jpg",
@@ -111,29 +105,29 @@ export default function AboutPage() {
           ].map((member) => (
             <div
               key={member.name}
-              className="bg-white p-6 shadow-md rounded-lg border border-gray-200 flex gap-4"
+              className="bg-white p-6 shadow-md rounded-xl border border-gray-200 flex gap-4 items-start"
             >
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-24 h-24 object-cover rounded-full border border-gray-300"
+                className="w-24 h-24 object-cover rounded-full border border-[#D1D5DB]"
               />
               <div>
-                <h3 className="text-lg font-semibold text-red-600">
+                <h3 className="text-lg font-semibold text-[#F5A623]">
                   {member.name}
                 </h3>
-                <p className="text-sm text-gray-700">{member.role}</p>
-                <p className="text-sm italic text-gray-600">
+                <p className="text-sm text-[#0E1A1F]">{member.role}</p>
+                <p className="text-sm italic text-[#6B7280]">
                   {member.qualification}
                 </p>
                 {member.phone && (
-                  <p className="text-sm mt-2 text-gray-700">
-                    📞 <a href={`tel:${member.phone}`}>{member.phone}</a>
+                  <p className="text-sm mt-2 text-[#4B5563]">
+                    📞 <a href={`tel:${member.phone}`} className="hover:text-[#F5A623]">{member.phone}</a>
                   </p>
                 )}
                 {member.email && (
-                  <p className="text-sm text-gray-700">
-                    ✉️ <a href={`mailto:${member.email}`}>{member.email}</a>
+                  <p className="text-sm text-[#4B5563]">
+                    ✉️ <a href={`mailto:${member.email}`} className="hover:text-[#F5A623]">{member.email}</a>
                   </p>
                 )}
               </div>
