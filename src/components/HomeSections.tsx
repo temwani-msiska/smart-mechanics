@@ -185,16 +185,26 @@ export function ClientsSection() {
       whileInView="show"
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-white py-24 text-center"
+      className="relative bg-gradient-to-b from-[#fefce8] to-white py-28 overflow-hidden"
     >
-      <h2 className="text-3xl md:text-4xl font-extrabold text-[#0E1A1F] mb-6">
-        Our Clients
-      </h2>
-      <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-        Trusted by Zambia’s leading companies across industry, logistics, and
-        agriculture.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-10 px-6 max-w-6xl mx-auto">
+      {/* Background Gear Animation */}
+      <div className="absolute -top-24 -left-32 w-96 opacity-10 pointer-events-none select-none">
+        <Lottie animationData={gearAnimation} loop />
+      </div>
+
+      {/* Heading */}
+      <div className="relative z-10 text-center mb-16 px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#0E1A1F] mb-4">
+          Our Clients
+        </h2>
+        <p className="text-gray-600 max-w-xl mx-auto text-lg">
+          Empowering some of Zambia’s most trusted names in logistics, energy,
+          agriculture, and retail.
+        </p>
+      </div>
+
+      {/* Floating Logos Grid */}
+      <div className="relative z-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-10 px-6 max-w-6xl mx-auto">
         {[
           { src: "/clients/zambian-breweries.jpg", alt: "Zambian Breweries" },
           { src: "/clients/bollore.jpg", alt: "Bolloré Africa Logistics" },
@@ -209,7 +219,8 @@ export function ClientsSection() {
           <motion.div
             key={i}
             variants={fadeUp}
-            className="bg-white p-4 rounded-xl shadow hover:shadow-md transition flex items-center justify-center"
+            whileHover={{ scale: 1.05, rotate: -1 }}
+            className="bg-white p-5 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 hover:rotate-1 flex items-center justify-center"
           >
             <img
               src={src}
