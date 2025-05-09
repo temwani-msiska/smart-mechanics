@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, Target, ShieldCheck } from "lucide-react";
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
 import gearAnimation from "../../animations/gear.json";
-
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0 },
