@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, Target, ShieldCheck } from "lucide-react";
-import dynamic from 'next/dynamic';
+import CountUp from "react-countup";
+import dynamic from "next/dynamic";
 import gearAnimation from "../../animations/gear.json";
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0 },
@@ -34,12 +35,11 @@ export default function AboutPage() {
             Who We Are
           </h1>
           <p className="text-lg md:text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed">
-            Since 2018, Smart Mechanics Zambia has been trusted to power Zambia’s vital
-            industries — mining, agriculture, construction, and logistics — with innovation,
-            speed, and people-first service.
+            Since 2018, Smart Mechanics Zambia has been trusted to power
+            Zambia’s vital industries — mining, agriculture, construction, and
+            logistics — with innovation, speed, and people-first service.
           </p>
         </motion.section>
-
         {/* Vision, Mission, Culture */}
         <motion.section
           className="grid md:grid-cols-3 gap-10"
@@ -77,7 +77,6 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </motion.section>
-
         {/* Values */}
         <motion.section
           initial="hidden"
@@ -107,7 +106,6 @@ export default function AboutPage() {
             ))}
           </div>
         </motion.section>
-
         {/* SHEQ Section */}
         <motion.section
           initial="hidden"
@@ -116,14 +114,41 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-6">Safety, Health & Environment</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            Safety, Health & Environment
+          </h2>
           <p className="text-[#4B5563] leading-relaxed">
-            We are committed to responsible operations that prioritize health, safety,
-            and the environment. Our SHEQ framework is proactive, data-driven,
-            and built to protect people, communities, and planet.
+            We are committed to responsible operations that prioritize health,
+            safety, and the environment. Our SHEQ framework is proactive,
+            data-driven, and built to protect people, communities, and planet.
           </p>
         </motion.section>
-
+      
+        {/* Stats Section */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center"
+        >
+          {[
+            { label: "Industries Served", value: 4, suffix: "+" },
+            { label: "Projects Completed", value: 250, suffix: "+" },
+            { label: "Years in Operation", value: 6, suffix: "+" },
+          ].map((stat, idx) => (
+            <motion.div
+              key={idx}
+              variants={fadeUp}
+              className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition"
+            >
+              <div className="text-4xl font-extrabold text-[#F5A623] mb-2">
+                <CountUp end={stat.value} duration={2} suffix={stat.suffix} />
+              </div>
+              <p className="text-sm text-[#4B5563]">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.section>
         {/* Team Section */}
         <motion.section
           initial="hidden"
@@ -131,7 +156,9 @@ export default function AboutPage() {
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.15 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-10">Meet the Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Meet the Team
+          </h2>
           <div className="grid md:grid-cols-2 gap-10">
             {[
               {
@@ -182,15 +209,22 @@ export default function AboutPage() {
                   className="w-24 h-24 object-cover rounded-full border-2 border-[#E5E7EB]"
                 />
                 <div>
-                  <h3 className="text-lg font-bold text-[#F5A623]">{member.name}</h3>
-                  <p className="text-sm font-medium text-[#1F2937]">{member.role}</p>
+                  <h3 className="text-lg font-bold text-[#F5A623]">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm font-medium text-[#1F2937]">
+                    {member.role}
+                  </p>
                   <p className="text-sm italic text-[#6B7280] mb-2">
                     {member.qualification}
                   </p>
                   {member.phone && (
                     <p className="text-sm text-[#4B5563]">
                       📞{" "}
-                      <a href={`tel:${member.phone}`} className="hover:text-[#F5A623]">
+                      <a
+                        href={`tel:${member.phone}`}
+                        className="hover:text-[#F5A623]"
+                      >
                         {member.phone}
                       </a>
                     </p>
@@ -198,7 +232,10 @@ export default function AboutPage() {
                   {member.email && (
                     <p className="text-sm text-[#4B5563]">
                       ✉️{" "}
-                      <a href={`mailto:${member.email}`} className="hover:text-[#F5A623]">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="hover:text-[#F5A623]"
+                      >
                         {member.email}
                       </a>
                     </p>
