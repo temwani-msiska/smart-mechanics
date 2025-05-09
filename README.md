@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Mechanics Zambia 🌍🔧
+![Smart Mechanics Logo](logo.jpg)
 
-## Getting Started
+**Delivering Trusted Mechanical & Technical Solutions Across Zambia — Since 2018**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧭 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Smart Mechanics Zambia is a leading provider of mechanical and technical solutions for Zambia’s industrial, agricultural, and logistics sectors. This responsive portfolio site was built to showcase our services, build trust, and attract new clients.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features
 
-## Learn More
+- ⚙️ **Hero Section** with custom animated gear and brand colors
+- 👷‍♂️ **About Us** with vision, mission, values, and team section
+- 🧰 **Service Listings** — Engine Overhaul, Forklift Hire, Car Hire & more
+- 🖼️ **Gallery** with modal image previews
+- 📬 **Contact Form** (EmailJS-ready)
+- 🔍 **SEO-optimized** metadata and semantic layout
+- 🎨 **Custom color palette** matching Smart Mechanics Zambia brand
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Frontend              | Styling       | Animation        | Deployment |
+|----------------------|---------------|------------------|------------|
+| Next.js 15 (App Dir) | Tailwind CSS  | Framer Motion    | Vercel     |
+| TypeScript           | CSS Modules   | Lottie Animations| -          |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🖼 Screenshots
+
+![Homepage Screenshot](screenshot-home.png)
+
+---
+
+## 🙌 Credits
+
+Built with ❤️ by [Temwani Msiska](https://temwanimsiska.dev)
+
+---
+
+## 📬 Contact Information
+
+- 📧 Email: [smartmechaniczambia@gmail.com](mailto:smartmechaniczambia@gmail.com)  
+- 📞 Phone: +260977276638 / +260966558122  
+- 📍 Address: Plot No 114/Flat 1, Alick Nkhata Rd, Kabulonga, Lusaka, Zambia  
+- 🌐 [Facebook Page](https://web.facebook.com/profile.php?id=100063883634099)
+
+---
+
+## 📄 License
+
+This project is proprietary. All rights reserved © Smart Mechanics Zambia.
