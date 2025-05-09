@@ -8,37 +8,69 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+
 export function Hero() {
   return (
     <section
-      className="relative h-screen bg-cover bg-center bg-no-repeat"
+      className="relative bg-cover bg-center bg-no-repeat text-white py-28"
       style={{ backgroundImage: "url('/backdrop.jpg')" }}
     >
-      <div className="absolute inset-0 bg-[#0E1A1F]/80 backdrop-blur-sm"></div>
-      <motion.div
-        className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-start"
-        variants={fadeInUp}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-[#F5A623] leading-tight drop-shadow-md">
-          Smart Mechanics Zambia
-        </h1>
-        <p className="text-lg text-[#E5E5E5] mt-4 max-w-xl leading-relaxed">
-          Delivering trusted mechanical & technical solutions for Zambia&rsquo;s
-          industrial, agricultural, and automotive sectors since 2018.
-        </p>
-        <a
-          href="/contact"
-          className="mt-8 inline-block bg-[#F5A623] text-[#0E1A1F] px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0E1A1F]/90"></div>
+
+      {/* Content wrapper with z-index */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Text Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          Get a Quote
-        </a>
-      </motion.div>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#F5A623] leading-tight mb-6">
+            Mechanical Power. Delivered.
+          </h1>
+          <p className="text-lg text-[#D1D5DB] leading-relaxed mb-8">
+            Trusted mechanical & technical solutions across Zambia — since 2018.
+            From forklifts to farming tools, we move your business forward.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-[#F5A623] text-[#0E1A1F] px-6 py-3 rounded-full font-semibold hover:scale-105 transition shadow-lg"
+          >
+            Get a Quote
+          </a>
+        </motion.div>
+
+        {/* Right Icon Cards */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-2 gap-6"
+        >
+          <div className="bg-[#1C2A31] p-6 rounded-xl flex items-center gap-4 shadow hover:shadow-lg transition">
+            <Wrench className="text-[#F5A623] w-7 h-7" />
+            <span className="text-[#D1D5DB] font-medium">Engine Overhauls</span>
+          </div>
+          <div className="bg-[#1C2A31] p-6 rounded-xl flex items-center gap-4 shadow hover:shadow-lg transition">
+            <Truck className="text-[#F5A623] w-7 h-7" />
+            <span className="text-[#D1D5DB] font-medium">Forklift Hire</span>
+          </div>
+          <div className="bg-[#1C2A31] p-6 rounded-xl flex items-center gap-4 shadow hover:shadow-lg transition">
+            <ShieldCheck className="text-[#F5A623] w-7 h-7" />
+            <span className="text-[#D1D5DB] font-medium">SHEQ Standards</span>
+          </div>
+          <div className="bg-[#1C2A31] p-6 rounded-xl flex items-center gap-4 shadow hover:shadow-lg transition">
+            <Wrench className="text-[#F5A623] w-7 h-7" />
+            <span className="text-[#D1D5DB] font-medium">Parts & Repairs</span>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
+
+
 
 export function AboutPreview() {
   return (
