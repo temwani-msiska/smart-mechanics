@@ -140,9 +140,12 @@ export default function AboutPage() {
           className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center"
         >
           {[
-            { label: "Industries Served", value: 4, suffix: "+" },
-            { label: "Projects Completed", value: 250, suffix: "+" },
-            { label: "Years in Operation", value: 6, suffix: "+" },
+            { label: "Years in Operation", value: 6, suffix: "+" }, 
+            { label: "Projects Completed", value: 250, suffix: "+" }, 
+            { label: "Industries Served", value: 4, suffix: "+" }, 
+            { label: "Clients Nationwide", value: 30, suffix: "+" }, 
+            { label: "Team Members & Specialists", value: 10, suffix: "+" }, 
+            { label: "Core Services Offered", value: 8, suffix: "+" }, 
           ].map((stat, idx) => (
             <motion.div
               key={idx}

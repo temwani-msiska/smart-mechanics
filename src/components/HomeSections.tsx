@@ -15,6 +15,10 @@ const GearAnimation = () => (
     <Lottie animationData={gearAnimation} loop={true} />
   </div>
 );
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
 
 export function Hero() {
   return (
@@ -172,6 +176,50 @@ export function ServicesPreview() {
         </div>
       </motion.div>
     </section>
+  );
+}
+export function ClientsSection() {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white py-24 text-center"
+    >
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#0E1A1F] mb-6">
+        Our Clients
+      </h2>
+      <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+        Trusted by Zambia’s leading companies across industry, logistics, and
+        agriculture.
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-10 px-6 max-w-6xl mx-auto">
+        {[
+          { src: "/clients/zambian-breweries.jpg", alt: "Zambian Breweries" },
+          { src: "/clients/bollore.jpg", alt: "Bolloré Africa Logistics" },
+          { src: "/clients/rubis.jpg", alt: "Rubis Energy" },
+          { src: "/clients/pia-manzi.png", alt: "Pia Manzi Wildlife" },
+          {
+            src: "/clients/african-supermarkets.png",
+            alt: "African Supermarkets",
+          },
+          { src: "/clients/zns.jpg", alt: "Zambia National Service" },
+        ].map(({ src, alt }, i) => (
+          <motion.div
+            key={i}
+            variants={fadeUp}
+            className="bg-white p-4 rounded-xl shadow hover:shadow-md transition flex items-center justify-center"
+          >
+            <img
+              src={src}
+              alt={alt}
+              className="h-16 object-contain transition duration-300"
+            />
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
   );
 }
 
