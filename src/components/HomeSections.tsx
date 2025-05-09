@@ -74,31 +74,44 @@ export function Hero() {
 
 export function AboutPreview() {
   return (
-    <section className="bg-white py-20">
+    <section className="relative bg-white py-24 overflow-hidden">
+      {/* Decorative Gear SVG */}
+      <div className="absolute top-0 right-0 w-64 opacity-10 pointer-events-none select-none">
+        <img src="/decor/gear.svg" alt="" className="animate-spin-slow" />
+      </div>
+
       <motion.div
-        className="max-w-4xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-[#F5A623] mb-4">
-          About Smart Mechanics
+        <div className="inline-flex items-center justify-center bg-[#F5A623]/10 text-[#F5A623] px-4 py-2 rounded-full mb-4 text-sm font-semibold tracking-wider uppercase">
+          <Wrench className="w-4 h-4 mr-2" /> Engineering Excellence
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#0E1A1F] mb-6 leading-tight">
+          Built for Performance. Powered by People.
         </h2>
-        <p className="text-gray-700 text-lg leading-relaxed">
-          Since 2018, Smart Mechanics Zambia has provided innovative,
-          cost-effective mechanical solutions for the mining, construction,
-          logistics, and agricultural sectors. We pride ourselves on speed,
-          reliability, and technical excellence.
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Since 2018, <strong>Smart Mechanics Zambia</strong> has transformed technical support across
+          Zambia’s mining, logistics, construction, and agriculture industries.
+          With rapid service, precision parts, and people-first thinking — we
+          engineer trust every step of the way.
         </p>
+
         <a
           href="/about"
-          className="mt-4 inline-block text-[#F5A623] font-medium underline"
+          className="mt-8 inline-block bg-[#F5A623] text-[#0E1A1F] px-8 py-3 rounded-full font-semibold shadow-md hover:scale-105 hover:brightness-105 transition"
         >
-          Learn more
+          Learn More About Us
         </a>
       </motion.div>
+
+      {/* Bottom Accent Line */}
+      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#F5A623]/20 via-[#F5A623]/60 to-[#F5A623]/20"></div>
     </section>
   );
 }
