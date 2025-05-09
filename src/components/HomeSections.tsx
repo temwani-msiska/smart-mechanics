@@ -2,11 +2,19 @@
 
 import { motion } from "framer-motion";
 import { Wrench, Truck, Settings, ShieldCheck, Car, Cog } from "lucide-react";
+import Lottie from 'lottie-react';
+import gearAnimation from '../animations/gear.json';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
+
+const GearAnimation = () => (
+  <div className="absolute top-0 right-0 w-64 opacity-20 select-none pointer-events-none">
+    <Lottie animationData={gearAnimation} loop={true} />
+  </div>
+);
 
 export function Hero() {
   return (
@@ -17,7 +25,6 @@ export function Hero() {
       <div className="absolute inset-0 bg-[#0E1A1F]/90 backdrop-blur-sm" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* Text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +44,6 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Icon Highlights */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -67,9 +73,7 @@ export function Hero() {
 export function AboutPreview() {
   return (
     <section className="relative bg-white py-24 overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 opacity-10 pointer-events-none select-none">
-        <img src="/decor/gear.svg" alt="" className="animate-spin-slow" />
-      </div>
+      <GearAnimation />
 
       <motion.div
         className="relative z-10 max-w-5xl mx-auto px-6 text-center"
@@ -117,7 +121,7 @@ export function ServicesPreview() {
   return (
     <section className="relative bg-[#0E1A1F] py-24 overflow-hidden">
       <div className="absolute -top-16 -left-24 w-72 h-72 opacity-10 rotate-12 pointer-events-none select-none">
-        <img src="/decor/gear.svg" alt="" className="w-full h-full animate-spin-slow" />
+        <Lottie animationData={gearAnimation} loop className="w-full h-full" />
       </div>
 
       <motion.div
