@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Smart Mechanics Zambia',
-  description: 'Automotive Excellence in Zambia',
+  description: 'Delivering trusted mechanical & technical solutions for Zambia&rsquo;s industrial, agricultural, and automotive sectors since 2018.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
