@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Wrench,
-  Truck,
-  Settings,
-  ShieldCheck,
-  Car,
-  Cog
-} from "lucide-react";
-
+import { Wrench, Truck, Settings, ShieldCheck, Car, Cog } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -18,7 +10,10 @@ const fadeInUp = {
 
 export function Hero() {
   return (
-    <section className="relative h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/backdrop.jpg')" }}>
+    <section
+      className="relative h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/backdrop.jpg')" }}
+    >
       <div className="absolute inset-0 bg-[#0E1A1F]/80 backdrop-blur-sm"></div>
       <motion.div
         className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-start"
@@ -31,7 +26,8 @@ export function Hero() {
           Smart Mechanics Zambia
         </h1>
         <p className="text-lg text-[#E5E5E5] mt-4 max-w-xl leading-relaxed">
-          Delivering trusted mechanical & technical solutions for Zambia&rsquo;s industrial, agricultural, and automotive sectors since 2018.
+          Delivering trusted mechanical & technical solutions for Zambia&rsquo;s
+          industrial, agricultural, and automotive sectors since 2018.
         </p>
         <a
           href="/contact"
@@ -59,7 +55,10 @@ export function AboutPreview() {
           About Smart Mechanics
         </h2>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Since 2018, Smart Mechanics Zambia has provided innovative, cost-effective mechanical solutions for the mining, construction, logistics, and agricultural sectors. We pride ourselves on speed, reliability, and technical excellence.
+          Since 2018, Smart Mechanics Zambia has provided innovative,
+          cost-effective mechanical solutions for the mining, construction,
+          logistics, and agricultural sectors. We pride ourselves on speed,
+          reliability, and technical excellence.
         </p>
         <a
           href="/about"
@@ -73,15 +72,14 @@ export function AboutPreview() {
 }
 
 export function ServicesPreview() {
-const services = [
-  { label: "Engine Overhaul", icon: Cog },
-  { label: "Forklift Hire & Maintenance", icon: Truck },
-  { label: "Earth Moving Repairs", icon: Settings },
-  { label: "Agricultural Equipment", icon: ShieldCheck },
-  { label: "Vehicle Parts & Filters", icon: Wrench },
-  { label: "Car Hire", icon: Car },
-];
-
+  const services = [
+    { label: "Engine Overhaul", icon: Cog },
+    { label: "Forklift Hire & Maintenance", icon: Truck },
+    { label: "Earth Moving Repairs", icon: Settings },
+    { label: "Agricultural Equipment", icon: ShieldCheck },
+    { label: "Vehicle Parts & Filters", icon: Wrench },
+    { label: "Car Hire", icon: Car },
+  ];
 
   return (
     <section className="bg-[#F9FAFB] py-20">
@@ -110,9 +108,12 @@ const services = [
               variants={fadeInUp}
             >
               <Icon className="mx-auto h-10 w-10 text-[#F5A623] mb-4" />
-              <h3 className="text-lg font-semibold text-[#0E1A1F] mb-2">{label}</h3>
+              <h3 className="text-lg font-semibold text-[#0E1A1F] mb-2">
+                {label}
+              </h3>
               <p className="text-sm text-gray-600">
-                Learn more about how we support clients with {label.toLowerCase()}.
+                Learn more about how we support clients with{" "}
+                {label.toLowerCase()}.
               </p>
             </motion.div>
           ))}
@@ -137,8 +138,13 @@ export function ContactCTA() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
-    <p className="mb-6 text-lg text-[#D1D5DB] max-w-xl mx-auto">Reach out today and let&rsquo;s build something powerful together.</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Ready to get started?
+        </h2>
+        <p className="mb-6 text-lg text-[#D1D5DB] max-w-xl mx-auto">
+          Reach out today and let&rsquo;s build something powerful together.
+        </p>
+
         <a
           href="/contact"
           className="bg-[#F5A623] text-[#0E1A1F] px-6 py-3 rounded-full font-semibold hover:brightness-110 hover:scale-105 transition"

@@ -1,76 +1,139 @@
 "use client";
 
-import { Briefcase, Target, ShieldCheck } from "lucide-react"; // Removed 'Users'
+import { motion } from "framer-motion";
+import { Briefcase, Target, ShieldCheck } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
 
 export default function AboutPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-20 space-y-20">
-      <section className="text-center">
-        <h1 className="text-4xl font-extrabold text-[#F5A623] mb-4 tracking-wide">
-          About Us
+    <div className="max-w-7xl mx-auto px-6 py-20 space-y-28">
+      {/* Header */}
+      <motion.section
+        className="text-center"
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-sm mb-6">
+          Who We Are
         </h1>
-        <p className="text-[#4B5563] text-lg leading-relaxed max-w-3xl mx-auto">
-          Smart Mechanics Zambia, founded in 2018, delivers reliable and cost-effective mechanical and technical solutions across Zambia. We serve industries including mining, construction, agriculture, and manufacturing. Our team is known for quick turnarounds, customer service, and sourcing high-quality parts.
+        <p className="text-gearGray text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          Since 2018, Smart Mechanics Zambia has been a trusted force in
+          Zambia’s technical sector — from mining to agriculture, construction
+          to logistics. We’re built on speed, precision, and people-first
+          service.
         </p>
-      </section>
+      </motion.section>
 
-      <section className="grid md:grid-cols-3 gap-10 text-center">
-        <div>
-          <Target className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
-          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Vision</h2>
-          <p className="text-[#6B7280] italic">
-            To be a customer-focused and forward-thinking provider of goods, equipment, and services.
-          </p>
-        </div>
-        <div>
-          <ShieldCheck className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
-          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Mission</h2>
-          <p className="text-[#4B5563] leading-relaxed">
-            Deliver high-quality goods and services while committing to technical excellence, employee development, and partnerships.
-          </p>
-        </div>
-        <div>
-          <Briefcase className="mx-auto mb-3 h-10 w-10 text-[#F5A623]" />
-          <h2 className="text-xl font-bold text-[#0E1A1F] mb-2">Work Culture</h2>
-          <p className="text-[#4B5563] leading-relaxed">
-            We promote innovation, inclusivity, and ISO-focused practices that eliminate inefficiencies and grow talent.
-          </p>
-        </div>
-      </section>
+      {/* Vision, Mission, Culture */}
+      <motion.section
+        className="grid md:grid-cols-3 gap-10 text-center"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.2 }}
+      >
+        {[
+          {
+            title: "Vision",
+            icon: Target,
+            desc: "To be a customer-focused and forward-thinking provider of goods, equipment, and services.",
+          },
+          {
+            title: "Mission",
+            icon: ShieldCheck,
+            desc: "Delivering high-quality goods and services through technical excellence, team growth, and innovation.",
+          },
+          {
+            title: "Work Culture",
+            icon: Briefcase,
+            desc: "Built on ISO standards, efficiency, teamwork, and inclusivity — we make excellence a habit.",
+          },
+        ].map(({ title, icon: Icon, desc }) => (
+          <motion.div
+            key={title}
+            variants={fadeUp}
+            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition"
+          >
+            <Icon className="mx-auto h-10 w-10 text-primary mb-4" />
+            <h3 className="text-xl font-bold text-darkBg mb-2">{title}</h3>
+            <p className="text-textGray italic">{desc}</p>
+          </motion.div>
+        ))}
+      </motion.section>
 
-      <section>
-        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-4 text-center">
-          Our Values
+      {/* Values */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl font-bold text-center text-darkBg mb-6">
+          Core Values
         </h2>
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[#4B5563] text-sm list-disc list-inside max-w-4xl mx-auto">
-          <li>Customer-Centricity</li>
-          <li>Integrity & Trustworthiness</li>
-          <li>Innovation & Creativity</li>
-          <li>Communication & Transparency</li>
-          <li>Customer Development & Support</li>
-          <li>Continuous Improvement</li>
-          <li>Collaboration & Teamwork</li>
-          <li>Geographic Reach & Expansion</li>
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-gearGray text-sm max-w-5xl mx-auto">
+          {[
+            "Customer-Centricity",
+            "Integrity & Trust",
+            "Innovation & Creativity",
+            "Clear Communication",
+            "Client Development",
+            "Continuous Improvement",
+            "Team Collaboration",
+            "Geographic Reach",
+          ].map((val) => (
+            <li
+              key={val}
+              className="bg-white py-4 px-2 rounded-lg shadow-sm hover:shadow-md transition border"
+            >
+              {val}
+            </li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
 
-      <section>
-        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-4 text-center">
-          Safety, Health, & the Environment
+      {/* SHEQ */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl font-bold text-center text-darkBg mb-6">
+          Safety, Health & Environment
         </h2>
-        <p className="text-[#4B5563] leading-relaxed max-w-3xl mx-auto text-center">
-          We prioritize safety, health, and environmental protection through integrated policies and proactive risk management. Our operations reduce carbon footprint and emphasize sustainability.
+        <p className="text-center text-gearGray max-w-3xl mx-auto leading-relaxed">
+          Our SHEQ policies are designed to minimize risk, protect health, and
+          promote eco-friendly practices. We invest in sustainable operations
+          that prioritize community and planet.
         </p>
-      </section>
+      </motion.section>
 
-      <section>
-        <h2 className="text-2xl font-bold text-[#0E1A1F] mb-6 text-center">Our Team</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+      {/* Team Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.15 }}
+      >
+        <h2 className="text-3xl font-bold text-center text-darkBg mb-10">
+          Meet the Team
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
           {[
             {
               name: "Luke Nsakanya",
               role: "Managing Director",
-              qualification: "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
+              qualification:
+                "B.Tech in Transport & Logistics, Rtec. Automotive Engineering",
               phone: "+260977276638",
               email: "lukensakanya@yahoo.com",
               image: "/team/LukeNkasanya.jpg",
@@ -103,38 +166,46 @@ export default function AboutPage() {
               image: "/team/default.jpg",
             },
           ].map((member) => (
-            <div
+            <motion.div
               key={member.name}
-              className="bg-white p-6 shadow-md rounded-xl border border-gray-200 flex gap-4 items-start"
+              variants={fadeUp}
+              className="flex gap-6 items-start bg-white p-6 rounded-2xl border shadow-md hover:shadow-lg transition"
             >
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-24 h-24 object-cover rounded-full border border-[#D1D5DB]"
+                className="w-24 h-24 object-cover rounded-full border-2 border-textGray"
               />
               <div>
-                <h3 className="text-lg font-semibold text-[#F5A623]">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-[#0E1A1F]">{member.role}</p>
-                <p className="text-sm italic text-[#6B7280]">
+                <h3 className="text-lg font-bold text-primary">{member.name}</h3>
+                <p className="text-sm text-darkBg">{member.role}</p>
+                <p className="text-sm italic text-textGray mb-2">
                   {member.qualification}
                 </p>
                 {member.phone && (
-                  <p className="text-sm mt-2 text-[#4B5563]">
-                    📞 <a href={`tel:${member.phone}`} className="hover:text-[#F5A623]">{member.phone}</a>
+                  <p className="text-sm text-gearGray">
+                    📞{" "}
+                    <a href={`tel:${member.phone}`} className="hover:text-primary">
+                      {member.phone}
+                    </a>
                   </p>
                 )}
                 {member.email && (
-                  <p className="text-sm text-[#4B5563]">
-                    ✉️ <a href={`mailto:${member.email}`} className="hover:text-[#F5A623]">{member.email}</a>
+                  <p className="text-sm text-gearGray">
+                    ✉️{" "}
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="hover:text-primary"
+                    >
+                      {member.email}
+                    </a>
                   </p>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
