@@ -32,38 +32,56 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section
-      className="relative bg-cover bg-center bg-no-repeat text-white min-h-[90vh] flex items-center"
-      style={{ backgroundImage: "url('/backdrop.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-[#0E1A1F]/90 backdrop-blur-sm" />
+    <section className="relative bg-[#0E1A1F] text-white min-h-[90vh] flex items-center overflow-hidden">
+      {/* Gradient Glow Behind Character */}
+      <div className="absolute left-0 top-0 h-full w-1/2 z-0 bg-gradient-to-br from-[#F5A623]/30 via-[#0E1A1F]/60 to-transparent" />
+      {/* Floating Gear Animation */}
+      <div className="absolute bottom-0 right-0 w-64 opacity-10 pointer-events-none select-none z-0">
+        <Lottie animationData={gearAnimation} loop />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      {/* Left: 3D Mascot Image */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="hidden md:block w-1/2 px-6 z-10"
+      >
+        <img
+          src="/Transparent.png"
+          alt="Smart Mechanics Mascot"
+          className="max-w-full h-auto object-contain drop-shadow-xl"
+        />
+      </motion.div>
+
+      {/* Right: Text & Services */}
+      <div className="relative z-10 w-full md:w-1/2 px-6 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#F5A623] leading-tight mb-6">
-            Mechanical Power. Delivered.
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#F5A623] leading-tight mb-6">
+            Mechanical Power. <br className="hidden md:block" />
+            Delivered.
           </h1>
-          <p className="text-lg md:text-xl text-[#E5E5E5] leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-[#D1D5DB] mb-6 leading-relaxed">
             Since 2018, we’ve engineered trust across Zambia’s industrial,
             agricultural, and logistics sectors.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-[#F5A623] text-[#0E1A1F] px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+            className="inline-block bg-[#F5A623] text-[#0E1A1F] px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
           >
             Get a Quote
           </a>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-2 gap-4 mt-10"
         >
           {[
             { icon: Wrench, label: "Engine Overhauls" },
@@ -73,10 +91,12 @@ export function Hero() {
           ].map(({ icon: Icon, label }, idx) => (
             <div
               key={idx}
-              className="bg-white/5 backdrop-blur-lg p-5 rounded-xl flex items-center gap-4 shadow-md hover:shadow-xl transition"
+              className="flex items-center gap-3 bg-white/10 p-4 rounded-xl backdrop-blur-sm shadow hover:shadow-xl transition"
             >
-              <Icon className="text-[#F5A623] w-7 h-7" />
-              <span className="text-[#D1D5DB] font-medium">{label}</span>
+              <Icon className="text-[#F5A623] w-6 h-6" />
+              <span className="text-[#E5E5E5] text-sm font-medium">
+                {label}
+              </span>
             </div>
           ))}
         </motion.div>
