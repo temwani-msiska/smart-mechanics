@@ -145,12 +145,42 @@ export function AboutPreview() {
 
 export function ServicesPreview() {
   const services = [
-    { label: "Engine Overhaul", icon: Cog },
-    { label: "Forklift Hire & Maintenance", icon: Truck },
-    { label: "Agricultural Equipment", icon: ShieldCheck },
-    { label: "Generator Services", icon: BatteryCharging },
-    { label: "Genset Hire", icon: Fuel },
-    { label: "Solar & Power Backup Systems", icon: SunMedium },
+    {
+      label: "Engine Overhaul",
+      icon: Cog,
+      description:
+        "Expert repairs and reconditioning for engines, gearboxes, and differentials—restoring tractors, forklifts, and vehicles to peak performance.",
+    },
+    {
+      label: "Forklift Hire & Maintenance",
+      icon: Truck,
+      description:
+        "Flexible forklift rental and comprehensive maintenance contracts with routine servicing and fault diagnostics for operational continuity.",
+    },
+    {
+      label: "Agricultural Equipment",
+      icon: ShieldCheck,
+      description:
+        "Supply, servicing, and repairs for tractors, ploughs, irrigation tools, and harvesters—supporting Zambia’s farmers at every step.",
+    },
+    {
+      label: "Generator Services",
+      icon: BatteryCharging,
+      description:
+        "Reliable repairs, maintenance, and parts supply for diesel generators to ensure uninterrupted power and minimized downtime.",
+    },
+    {
+      label: "Genset Hire",
+      icon: Fuel,
+      description:
+        "Hire high-performance gensets on flexible terms to meet temporary or emergency energy demands—backed by expert support.",
+    },
+    {
+      label: "Solar & Power Backup Systems",
+      icon: SunMedium,
+      description:
+        "Design and deployment of solar setups and hybrid backup systems tailored to household and industrial energy resilience.",
+    },
   ];
 
   return (
@@ -177,7 +207,7 @@ export function ServicesPreview() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map(({ label, icon: Icon }, idx) => {
+          {services.map(({ label, icon: Icon, description }, idx) => {
             const isLast = idx === services.length - 1;
             const isOdd = services.length % 3 === 1;
             const shouldCenter = isLast && isOdd;
@@ -195,10 +225,7 @@ export function ServicesPreview() {
                 <h3 className="text-xl font-semibold text-[#0E1A1F] mb-2">
                   {label}
                 </h3>
-                <p className="text-gray-600 text-sm">
-                  Discover how we help your business excel with{" "}
-                  <span className="font-medium">{label.toLowerCase()}</span>.
-                </p>
+                <p className="text-gray-600 text-sm">{description}</p>
               </motion.div>
             );
           })}
