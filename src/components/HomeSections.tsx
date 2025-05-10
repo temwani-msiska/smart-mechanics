@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Truck, Settings, ShieldCheck, Car, Cog } from "lucide-react";
+import {
+  Wrench,
+  Truck,
+  Settings,
+  ShieldCheck,
+  Car,
+  Cog,
+  BatteryCharging,
+  Fuel,
+  SunMedium,
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import gearAnimation from "../animations/gear.json";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -122,6 +132,9 @@ export function ServicesPreview() {
     { label: "Agricultural Equipment", icon: ShieldCheck },
     { label: "Vehicle Parts & Filters", icon: Wrench },
     { label: "Car Hire", icon: Car },
+    { label: "Generator Services", icon: BatteryCharging },
+    { label: "Genset Hire", icon: Fuel },
+    { label: "Solar & Power Backup Systems", icon: SunMedium },
   ];
 
   return (
@@ -146,26 +159,35 @@ export function ServicesPreview() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-[#F5A623] mb-16 tracking-tight">
           Trusted. Tested. Tailored.
         </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map(({ label, icon: Icon }, idx) => (
-            <motion.div
-              key={idx}
-              variants={fadeInUp}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-center"
-            >
-              <div className="w-14 h-14 mx-auto mb-4 bg-[#F5A623]/10 text-[#F5A623] rounded-full flex items-center justify-center">
-                <Icon className="w-7 h-7 animate-pulse" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0E1A1F] mb-2">
-                {label}
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Discover how we help your business excel with{" "}
-                <span className="font-medium">{label.toLowerCase()}</span>.
-              </p>
-            </motion.div>
-          ))}
+          {services.map(({ label, icon: Icon }, idx) => {
+            const isLast = idx === services.length - 1;
+            const isOdd = services.length % 3 === 1;
+            const shouldCenter = isLast && isOdd;
+            return (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-center ${
+                  shouldCenter ? "lg:col-start-2" : ""
+                }`}
+              >
+                <div className="w-14 h-14 mx-auto mb-4 bg-[#F5A623]/10 text-[#F5A623] rounded-full flex items-center justify-center">
+                  <Icon className="w-7 h-7 animate-pulse" />
+                </div>
+                <h3 className="text-xl font-semibold text-[#0E1A1F] mb-2">
+                  {label}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Discover how we help your business excel with{" "}
+                  <span className="font-medium">{label.toLowerCase()}</span>.
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
+
         <div className="mt-12 text-center">
           <a
             href="/services"
@@ -178,6 +200,7 @@ export function ServicesPreview() {
     </section>
   );
 }
+
 export function ClientsSection() {
   return (
     <motion.section
@@ -215,6 +238,8 @@ export function ClientsSection() {
             alt: "African Supermarkets",
           },
           { src: "/clients/zns.jpg", alt: "Zambia National Service" },
+          { src: "/clients/reiz.png", alt: "Real Estate Investments Zambia" },
+          { src: "/clients/cheers.jpg", alt: "Cheers Hypermarket" },
         ].map(({ src, alt }, i) => (
           <motion.div
             key={i}

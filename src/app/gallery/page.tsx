@@ -16,6 +16,13 @@ export default function GalleryPage() {
     "/assets/gallery4.jpg",
     "/assets/gallery5.jpg",
     "/assets/gallery6.jpg",
+    "/assets/gallery7.jpg",
+    "/assets/gallery8.jpg",
+    "/assets/gallery9.jpg",
+    "/assets/gallery10.jpg",
+    "/assets/gallery11.jpg",
+    "/assets/gallery12.jpg",
+    "/assets/gallery13.jpg",
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

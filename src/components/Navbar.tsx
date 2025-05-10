@@ -18,16 +18,20 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#0E1A1F] shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Brand Name */}
-        <Link
-          href="/"
-          className="text-xl font-bold text-[#F5A623] hover:opacity-90 transition"
-        >
-          Smart Mechanics Zambia
+      <div className="w-full px-4 py-3 flex items-center justify-between">
+        {/* Left: Logo + Brand Name */}
+        <Link href="/" className="flex items-center space-x-3 group">
+          <img
+            src="/logo-smz.png"
+            alt="Smart Mechanics Logo"
+            className="h-14 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce"
+          />
+          <span className="text-2xl font-extrabold text-[#F5A623] tracking-wide group-hover:opacity-95 transition-all duration-300">
+            Smart Mechanics Zambia
+          </span>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Right: Desktop Nav */}
         <div className="space-x-6 hidden md:flex">
           {navItems.map((item) => (
             <Link
@@ -42,7 +46,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden text-[#D1D5DB] focus:outline-none"

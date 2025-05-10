@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Truck, Tractor, Filter, Car, Settings } from "lucide-react";
+import {
+  Wrench,
+  Truck,
+  Tractor,
+  Filter,
+  Car,
+  Settings,
+  BatteryCharging,
+  Fuel,
+  SunMedium,
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import gearAnimation from "../../animations/gear.json";
 
@@ -49,6 +59,24 @@ export default function ServicesPage() {
       description:
         "Affordable logistics solutions and car hire (1-ton van, saloon car) for your transport needs.",
       icon: Car,
+    },
+    {
+      title: "Generator Services",
+      description:
+        "Installation, maintenance, and procurement of diesel and petrol generators for commercial and industrial use.",
+      icon: BatteryCharging,
+    },
+    {
+      title: "Genset Hire",
+      description:
+        "Hire reliable genset units for short-term or long-term power needs — fully serviced and ready for use.",
+      icon: Fuel,
+    },
+    {
+      title: "Solar & Power Backup Systems",
+      description:
+        "Supply and installation of solar panels, inverters, and battery backup systems for homes and businesses.",
+      icon: SunMedium,
     },
   ];
 
