@@ -6,7 +6,6 @@ import {
   Truck,
   Settings,
   ShieldCheck,
-  Car,
   Cog,
   BatteryCharging,
   Fuel,
@@ -33,12 +32,12 @@ const fadeUp = {
 export function Hero() {
   return (
     <section className="relative bg-[#0E1A1F] text-white min-h-[90vh] flex items-center overflow-hidden">
-      {/* Gradient Glow Behind Character */}
-      <div className="absolute left-0 top-0 h-full w-1/2 z-0 bg-gradient-to-br from-[#F5A623]/30 via-[#0E1A1F]/60 to-transparent" />
-      {/* Floating Gear Animation */}
-      <div className="absolute bottom-0 right-0 w-64 opacity-10 pointer-events-none select-none z-0">
+      {/* Gear Animation – Top Left */}
+      <div className="absolute top-0 right-0 w-64 opacity-10 pointer-events-none select-none z-0">
         <Lottie animationData={gearAnimation} loop />
       </div>
+      {/* Gradient Glow Behind Character */}
+      <div className="absolute left-0 top-0 h-full w-1/2 z-0 bg-gradient-to-br from-[#F5A623]/30 via-[#0E1A1F]/60 to-transparent" />
 
       {/* Left: 3D Mascot Image */}
       <motion.div
@@ -148,10 +147,7 @@ export function ServicesPreview() {
   const services = [
     { label: "Engine Overhaul", icon: Cog },
     { label: "Forklift Hire & Maintenance", icon: Truck },
-    { label: "Earth Moving Repairs", icon: Settings },
     { label: "Agricultural Equipment", icon: ShieldCheck },
-    { label: "Vehicle Parts & Filters", icon: Wrench },
-    { label: "Car Hire", icon: Car },
     { label: "Generator Services", icon: BatteryCharging },
     { label: "Genset Hire", icon: Fuel },
     { label: "Solar & Power Backup Systems", icon: SunMedium },
@@ -258,7 +254,7 @@ export function ClientsSection() {
             alt: "African Supermarkets",
           },
           { src: "/clients/zns.jpg", alt: "Zambia National Service" },
-          { src: "/clients/reiz.png", alt: "Real Estate Investments Zambia" },
+          { src: "/clients/reiz.jpg", alt: "Real Estate Investments Zambia" },
           { src: "/clients/cheers.jpg", alt: "Cheers Hypermarket" },
         ].map(({ src, alt }, i) => (
           <motion.div
