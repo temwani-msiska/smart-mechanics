@@ -254,7 +254,7 @@ export function ClientsSection() {
             alt: "African Supermarkets",
           },
           { src: "/clients/zns.jpg", alt: "Zambia National Service" },
-          { src: "/clients/reiz.jpg", alt: "Real Estate Investments Zambia" },
+          { src: "/clients/Reiz.png", alt: "Real Estate Investments Zambia" },
           { src: "/clients/cheers.jpg", alt: "Cheers Hypermarket" },
         ].map(({ src, alt }, i) => (
           <motion.div
