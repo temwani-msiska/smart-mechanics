@@ -51,13 +51,13 @@ export default function Footer() {
       {/* Built By */}
       <div className="mt-8 text-center text-xs text-[#D1D5DB]">
         <a
-          href="https://temwanimsiska.dev"
+          href="https://www.pixelpulse.co.zm/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-[#F5A623] hover:underline hover:brightness-110 transition"
         >
           <Code2 size={14} />
-          Built with love by Temwani Msiska
+          Built with by Pixel Pulse Studio Zambia
         </a>
       </div>
     </footer>
