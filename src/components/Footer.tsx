@@ -21,7 +21,7 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="tel:+260977276638"
+            href="tel:+260 977 408164"
             className="flex items-center gap-2 hover:text-[#F5A623] transition"
           >
             <Phone size={16} />

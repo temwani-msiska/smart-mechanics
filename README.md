@@ -41,14 +41,14 @@ Smart Mechanics Zambia is a leading provider of mechanical and technical solutio
 
 ## 🙌 Credits
 
-Built with ❤️ by [Temwani Msiska](https://temwanimsiska.dev)
+Built with ❤️ by [Pixel Pulse Studios](https://www.pixelpulse.co.zm/)
 
 ---
 
 ## 📬 Contact Information
 
 - 📧 Email: [smartmechaniczambia@gmail.com](mailto:smartmechaniczambia@gmail.com)  
-- 📞 Phone: +260977276638 / +260966558122  
+- 📞 Phone: +260 977 408164
 - 📍 Address: Plot No 114/Flat 1, Alick Nkhata Rd, Kabulonga, Lusaka, Zambia  
 - 🌐 [Facebook Page](https://web.facebook.com/profile.php?id=100063883634099)
 
